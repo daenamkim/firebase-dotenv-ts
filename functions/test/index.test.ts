@@ -33,6 +33,7 @@ describe("Dotenv", () => {
   });
   it("should return with no secret", async () => {
     // TODO: why does this fail?
+    // https://firebase.google.com/docs/functions/config-env#create-secret
     const res = await chai.request("http://localhost:5001").get("/dotenv/us-central1/endpointWithNoSecret");
     expect(res.status).to.equal(200);
     expect(res.body).to.deep.equal({
